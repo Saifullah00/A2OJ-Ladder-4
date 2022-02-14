@@ -9,21 +9,15 @@ int main()
     cin >> user_input;
     transform(user_input.begin(), user_input.end(), user_input.begin(), ::tolower);
 
-    int length = user_input.length();
-
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < 6; i++)
     {
         user_input.erase(remove(user_input.begin(), user_input.end(), vowels[i]), user_input.end());
-        
     }
-    cout<<user_input;
 
-    // int length = user_input.length();
-
-    // for (int i = 0; i < length; i++)
-    // {
-    //     cout << '.' << user_input[i];
-    // }
-
+    int length = user_input.length();
+    for (int i = 0; i < length; i++)
+    {
+        cout << '.' << user_input[i];
+    }
     return 0;
 }
