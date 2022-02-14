@@ -2,28 +2,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+string a, b;
 int main()
 {
-    int i, j, res = 1;
-    string s1, s2; 
-    cin >> s1 >> s2;
-    transform(s2.begin(),s2.end(), s2.begin(), ::toupper);
-
-    int len = s1.length();
-
-    for (i= 0; i < len; i++)
+    cin >> a >> b;
+    for (int i = 0; i < a.length(); i++)
     {
-        
-        if (s1[i] == s2[i]+ 32)
+        if (a[i] < 92)
         {
-            res = 0; 
+            a[i] += 32;
         }
-        else if (s1[i] < s2[i] + 32)
+        if (b[i] < 92)
         {
-            res = -1; 
+            b[i] += 32;
         }
     }
-    cout<<res<<endl;
-
-    return 0;
+    if (a < b)
+    {
+        cout << -1;
+    }
+    else if (a > b)
+    {
+        cout << 1;
+    }
+    else if (a == b)
+    {
+        cout << 0;
+    }
 }
